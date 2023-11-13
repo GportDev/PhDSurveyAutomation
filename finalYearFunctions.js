@@ -46,19 +46,20 @@ const finalSemester = addSemester(initialSemester, initialYear, 8).split(' ')[0]
 console.log("Final semester: ", finalSemester);
 
 // ---------------- Last Year ----------------
-const dlAdmittedToCandidacy = document.getElementById("QR~QID22");
-if(dlAdmittedToCandidacy) {
-  dlAdmittedToCandidacy.value = addSemester(initialSemester, initialYear, 5);
-  dlAdmittedToCandidacy.classList.add("check-list");
-  dlAdmittedToCandidacy.disable;
-}
-
-
 const dlApplyForGraduation = document.getElementById("QR~QID26");
 if(dlApplyForGraduation) {
   dlApplyForGraduation.value = addSemester(initialSemester, initialYear, 5);
   dlApplyForGraduation.classList.add("check-list");
-  dlApplyForGraduation.disable;
+  dlApplyForGraduation.disabled = true;
+}
+
+
+// ---------------- Backwards counting ----------------
+const dlSubmitCopyOfDissertation = document.getElementById("QR~QID39");
+if(dlSubmitCopyOfDissertation) {
+  dlSubmitCopyOfDissertation.value = deleteSemester(finalSemester, expectedGraduationYear, 1);
+  dlSubmitCopyOfDissertation.classList.add("check-list");
+  dlSubmitCopyOfDissertation.disabled = true;
 }
 
 
@@ -66,7 +67,7 @@ const dlAdvSubmitCertificate = document.getElementById("QR~QID27");
 if(dlAdvSubmitCertificate) {
   dlAdvSubmitCertificate.value = deleteSemester(finalSemester, expectedGraduationYear, 1);
   dlAdvSubmitCertificate.classList.add("check-list");
-  dlAdvSubmitCertificate.disable;
+  dlAdvSubmitCertificate.disabled = true;
 }
 
 
@@ -74,7 +75,7 @@ const dlCompleteSurvey = document.getElementById("QR~QID28");
 if(dlCompleteSurvey) {
   dlCompleteSurvey.value = deleteSemester(finalSemester, expectedGraduationYear, 1);
   dlCompleteSurvey.classList.add("check-list");
-  dlCompleteSurvey.disable;
+  dlCompleteSurvey.disabled = true;
 }
 
 
@@ -82,7 +83,7 @@ const dlSubmitDissertationToGradSchool = document.getElementById("QR~QID29");
 if(dlSubmitDissertationToGradSchool) {
   dlSubmitDissertationToGradSchool.value = deleteSemester(finalSemester, expectedGraduationYear, 1);
   dlSubmitDissertationToGradSchool.classList.add("check-list");
-  dlSubmitDissertationToGradSchool.disable;
+  dlSubmitDissertationToGradSchool.disabled = true;
 }
 
 
@@ -90,7 +91,7 @@ const dlSubmitFinalApprovedDissertation = document.getElementById("QR~QID30");
 if(dlSubmitFinalApprovedDissertation) {
   dlSubmitFinalApprovedDissertation.value = deleteSemester(finalSemester, expectedGraduationYear, 1);
   dlSubmitFinalApprovedDissertation.classList.add("check-list");
-  dlSubmitFinalApprovedDissertation.disable;
+  dlSubmitFinalApprovedDissertation.disabled = true;
 }
 
 
@@ -98,7 +99,7 @@ const dlPurchaseCopies = document.getElementById("QR~QID31");
 if(dlPurchaseCopies) {
   dlPurchaseCopies.value = deleteSemester(finalSemester, expectedGraduationYear, 1);
   dlPurchaseCopies.classList.add("check-list");
-  dlPurchaseCopies.disable;
+  dlPurchaseCopies.disabled = true;
 }
 
 
@@ -106,7 +107,7 @@ const dlReturnBooks = document.getElementById("QR~QID32");
 if(dlReturnBooks) {
   dlReturnBooks.value = deleteSemester(finalSemester, expectedGraduationYear, 1);
   dlReturnBooks.classList.add("check-list");
-  dlReturnBooks.disable;
+  dlReturnBooks.disabled = true;
 }
 
 // ---------------- End of the last Year ----------------
